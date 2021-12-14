@@ -1,15 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import InputField from './InputField';
 
-const AddField = () => {
+const AddField = ({totalScore, addTask}) => {
+
+    // const[userInput, SetUserInput] = useState('')
+    //
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     addTask(userInput);
+    //     SetUserInput('');
+    // }
+    //
+    // const handleChange = (e) => {
+    //     SetUserInput(e.currentTarget.value)
+    // }
+    //
+    // const keyHandle = (e) => {
+    //     if(e.key === "Enter") {
+    //         handleSubmit(e);
+    //     }
+    // }
+
     return (
             <div className='add__field_wrapper'>
-                <div className='add__item'>
-                    <input type='text' className='add__task' placeholder='+ Add a task, press Enter to save'/>
-                    <button className='submit__btn'>Add</button>
-                </div>
+                <InputField addTask={addTask}/>
                 <div className='score__field_wrapper'>
                     <span className='score__field'>
-                        Total:7
+                        Total: {totalScore}
                     </span>
                 </div>
             </div>

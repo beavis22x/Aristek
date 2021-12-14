@@ -1,15 +1,21 @@
 import React from 'react';
 import DeleteBtn from './SVG/DeleteBtn';
 
-const CompletedItem = () => {
+const CompletedItem = ({removeTask, toggleTask, task}) => {
+
+
+
     return (
-        <div className='completed__field_item'>
+        <div key={task.id} className='completed__field_item'>
             <div className='completed__item_task'>
-                <input type='checkbox' className='completed_item_checkbox'/>
-                <span className='completed_item_text'>Add Icon to Dashboard</span>
+                <input type='checkbox'
+                       className='completed_item_checkbox'
+                       checked={task.complete}
+                       onChange={() => toggleTask(task.id)}/>
+                <span className='completed_item_text'>{task.task}</span>
             </div>
             <div className='completed__item_btn'>
-                <div><DeleteBtn/></div>
+                <div className='delete__btn' onClick={() => removeTask(task.id)}><DeleteBtn/></div>
             </div>
         </div>
     );

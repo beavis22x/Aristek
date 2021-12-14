@@ -71,11 +71,11 @@ html, body {
   height: 100%;
 }
 
-/*.App {*/
-/*  height: 100vh;*/
-/*}*/
 
-
+.App {
+  height: 100%;
+  min-height: 100vh;
+}
 
 .header__wrapper {
   min-width: 500px;
@@ -117,6 +117,7 @@ html, body {
 }
 
 .main {
+  min-height: 100vh;
   display: grid;
   grid-template: 100% / 52px 1fr ;
 }
@@ -200,6 +201,10 @@ html, body {
 .to_do_item {
   display: grid;
   grid-template: 1fr / 1fr 76px;
+  margin-bottom: 16px;
+}
+
+.edit_item_wrapper {
   margin-bottom: 16px;
 }
 
