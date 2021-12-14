@@ -21,16 +21,15 @@ const InputField = ({addTask}) => {
     }
 
     return (
-            <form onSubmit={handleSubmit} className='add__item'>
-                <input type='text'
-                       className='add__task'
-                       placeholder='+ Add a task, press Enter to save'
-                       onChange={handleChange}
-                       onKeyDown={keyHandle}
-                       value={userInput}
-                />
-                <button className='submit__btn'>Add</button>
-            </form>
+        <form onSubmit={handleSubmit} className='add__item'>
+            <input type='text'
+                   className='add__task'
+                   placeholder='+ Add a task, press Enter to save'
+                   onChange={handleChange}
+                   onKeyDown={keyHandle}
+                   value={userInput}/>
+            <button className='submit__btn'>Add</button>
+        </form>
 
     );
 }

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const EditField = ({ task, id, editTask }) => {
+const EditField = ({task, id, editTask}) => {
 
     const [editInput, SetEditInput] = useState(task)
 
@@ -27,8 +27,7 @@ const EditField = ({ task, id, editTask }) => {
                        className='add__task'
                        onChange={handleChange}
                        onKeyDown={keyHandle}
-                       value={editInput}
-                />
+                       value={editInput}/>
                 <button className='submit__btn'>Save</button>
             </form>
         </div>

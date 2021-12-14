@@ -1,8 +1,7 @@
 import React from 'react';
 import CompletedItem from './CompletedItem';
-import TodoItem from './TodoItem';
 
-const CompletedField = ({completeTasks, removeTask, toggleTask, isCompleted}) => {
+const CompletedField = ({completeTasks, removeTask, toggleTask}) => {
 
     const completedScore = completeTasks.length
 
@@ -11,8 +10,7 @@ const CompletedField = ({completeTasks, removeTask, toggleTask, isCompleted}) =>
             <CompletedItem key={task.id}
                            task={task}
                            removeTask={removeTask}
-                           toggleTask={toggleTask}
-            />
+                           toggleTask={toggleTask}/>
         )
     })
 

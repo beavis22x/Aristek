@@ -58,7 +58,7 @@ function App() {
         )
     }
 
-    const SetEditMode = (id) => {
+    const setEditMode = (id) => {
         SetTodos(todos.map(obj => { // If obj.id == id return copy obj with change property else
                 if (obj.id === id) { // return unchanged obj
                     return {...obj, editMode: true};
@@ -75,7 +75,7 @@ function App() {
         SetCompleteTasks(completeTasks.filter(obj => obj.id !== id))
     }
 
-    const toggleTask = (id) => { // удаляет из списка тодо и добавляет в список комплит таск и наоборот
+    const toggleTask = (id) => {
 
         const fromTo = (arrayFrom, setFrom, arrayTo, setTo) => { //  function for DRY)
             const toggleTodo = arrayFrom.filter(obj => obj.id === id)// return array with 1 obj
@@ -112,14 +112,12 @@ function App() {
                                    removeTask={removeTask}
                                    toggleTask={toggleTask}
                                    addTask={addTask}
-                                   SetEditMode={SetEditMode}
-                                   editTask={editTask}
-                        />
+                                   setEditMode={setEditMode}
+                                   editTask={editTask}/>
                         <CompletedField completeTasks={completeTasks}
                                         removeTask={removeTask}
                                         toggleTask={toggleTask}
-                                        addTask={addTask}
-                        />
+                                        addTask={addTask}/>
                     </div>
                 </section>
             </main>

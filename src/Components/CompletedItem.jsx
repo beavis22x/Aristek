@@ -2,9 +2,6 @@ import React from 'react';
 import DeleteBtn from './SVG/DeleteBtn';
 
 const CompletedItem = ({removeTask, toggleTask, task}) => {
-
-
-
     return (
         <div key={task.id} className='completed__field_item'>
             <div className='completed__item_task'>

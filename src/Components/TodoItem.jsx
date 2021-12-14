@@ -1,17 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import EditBtn from './SVG/EditBtn';
 import CopyBtn from './SVG/CopyBtn';
 import DeleteBtn from './SVG/DeleteBtn';
 import EditField from './EditField';
 
-const TodoItem = ({todo, removeTask, toggleTask, SetEditMode, editTask}) => {
-
-    // const[userInput, SetUseInput] = useState('');
-    // const [editMode, SetEditMode] = useState(false)
+const TodoItem = ({todo, removeTask, toggleTask, setEditMode, editTask}) => {
 
     const editModeHandler = (id) => {
-        SetEditMode(id)
-        // editTask(id);
+        setEditMode(id)
     }
 
     return (
@@ -19,8 +15,7 @@ const TodoItem = ({todo, removeTask, toggleTask, SetEditMode, editTask}) => {
             {todo.editMode ? <EditField id={todo.id}
                                         editMode={todo.editMode}
                                         task={todo.task}
-                                        editTask={editTask}
-                />
+                                        editTask={editTask}/>
                 :
                 <div className='to_do_item'>
                     <div className='to_do_task'>
