@@ -167,6 +167,12 @@ html, body {
   padding: 0 12px;
 }
 
+.invalid{
+  border: 2px solid red;
+  box-shadow: none;
+  color: red
+}
+
 .submit__btn {
   border-radius: 5px;
   background-color: #550DC9;

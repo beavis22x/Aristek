@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import useInput from './ValidationHook';
 
 const EditField = ({task, id, editTask}) => {
+
+    const input = useInput('', editTask, {isEmpty: true})
 
     const [editInput, SetEditInput] = useState(task)
 
