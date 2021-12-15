@@ -1,8 +1,8 @@
 const groupBy = (arr, key) => {
 
     const keyExist = new Error('Key does not exist'),
-        keyError = new TypeError('Key is not provided'),
-        arrayError = new TypeError('Array is not provided');
+          keyError = new TypeError('Key is not provided'),
+          arrayError = new TypeError('Array is not provided');
 
     keyExist.name = "keyExist"
 
@@ -10,8 +10,7 @@ const groupBy = (arr, key) => {
         if(!Array.isArray(arr) || !arr.length) {
             throw arrayError;
         }
-    }
-    catch (error) {
+    } catch (error) {
         if (error.name === "TypeError") {
             console.log("Error: " + error.message);
             return error
@@ -24,8 +23,7 @@ const groupBy = (arr, key) => {
         if(!key || !key.length) {
             throw keyError;
         }
-    }
-    catch (error) {
+    } catch (error) {
         if (error.name.toString() === "TypeError") {
             console.log("Error: " + error.message);
             return error
@@ -48,6 +46,8 @@ const groupBy = (arr, key) => {
         if (error.name.toString() === "keyExist") {
             console.log("Error: " + error.message);
             return {};
+        } else {
+            throw error;
         }
     }
 
