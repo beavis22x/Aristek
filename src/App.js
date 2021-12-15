@@ -49,13 +49,15 @@ function App() {
     }
 
     const editTask = (editInput, id) => {
-        SetTodos(todos.map(obj => { // If obj.id == id return copy obj with change properties else
-                if (obj.id === id) { // return unchanged obj
-                    return {...obj, task: editInput, editMode: false};
-                }
-                return obj;
-            })
-        )
+        if (editInput) {
+            SetTodos(todos.map(obj => { // If obj.id == id return copy obj with change properties else
+                    if (obj.id === id) { // return unchanged obj
+                        return {...obj, task: editInput, editMode: false};
+                    }
+                    return obj;
+                })
+            )
+        }
     }
 
     const setEditMode = (id) => {

@@ -1,17 +1,16 @@
 import {useEffect, useState} from 'react';
 
-const useValidation = (value, validations) => {
-    const[isEmpty, setEmpty] = useState(true);
+const useValidation = (value, validations) => { // validations - obj
+    const [isEmpty, setEmpty] = useState(true);
 
     useEffect(() => { // So difficult to scale
-        for (const validation in validations) {
+        for (const validation in validations) { // In validations can be maxlength etc.
             switch (validation) {
                 case 'isEmpty':
                     value ? setEmpty(false) : setEmpty(true);
                     break;
             }
         }
-
     }, [value])
 
     return {
@@ -19,15 +18,15 @@ const useValidation = (value, validations) => {
     }
 }
 
- const useInput = (initialValue, addTask, validations) => {
+const useInput = (initialValue, changeTask, validations, ...args) => {
     const [value, setValue] = useState(initialValue);
     const [isDirty, setDirty] = useState(false);
 
     const valid = useValidation(value, validations)
 
     const onSubmit = (e) => {
-        e.preventDefault();
-        addTask(value);
+        e.preventDefault(e);
+        changeTask(value, ...args); // in ...args id from chosen todoItem
 
         setValue('');
         setDirty(false);
@@ -41,11 +40,11 @@ const useValidation = (value, validations) => {
         setDirty(true);
     }
 
-     const keyHandle = (e) => {
-             if (e.key === "Enter") {
-                 onSubmit(e);
-             }
-         }
+    const keyHandle = (e) => {
+        if (e.key === "Enter") {
+            onSubmit(e);
+        }
+    }
 
     return {
         onSubmit,
